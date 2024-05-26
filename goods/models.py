@@ -52,3 +52,19 @@ class Products(models.Model):
         if self.discount:
             return round(self.price - self.price * self.discount / 100, 2)
         return self.price
+
+
+class ProductImage(models.Model):
+    product = models.ForeignKey(
+        Products, related_name="images", blank=True, null=True, on_delete=models.CASCADE
+    )
+    image = models.ImageField(
+        upload_to="goods_images", blank=True, null=True, verbose_name="Фото"
+    )
+
+    class Meta:
+        verbose_name = "Фото товара"
+        verbose_name_plural = "Фото товара"
+
+    def __str__(self):
+        return f"Image for {self.product.name}"
