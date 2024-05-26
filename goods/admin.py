@@ -10,12 +10,21 @@ from .models import Categories, Products
 @admin.register(Categories)
 class CategoriesAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
-    list_display = []
 
 
 @admin.register(Products)
 class ProductsAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
-    list_display = ['name', 'slug', 'description', 'image', 'price', 'discount', 'quantity', 'category']
-    list_editable= ['price', 'discount', 'quantity']
+    list_display = [
+        "name",
+        "slug",
+        "description",
+        "image",
+        "price",
+        "discount",
+        "quantity",
+        "category",
+    ]
+    list_editable = ["price", "discount", "quantity"]
+    list_filter = ["category"]
     save_on_top = True
