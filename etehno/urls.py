@@ -4,9 +4,6 @@ from django.conf.urls.static import static
 
 from etehno import settings
 
-
-
-
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("main.urls", namespace="main")),
