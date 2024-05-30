@@ -1,0 +1,1 @@
+[{"model": "goods.productimage", "pk": 3, "fields": {"product": 10, "image": "goods_images/plants_3SFkx44.jpg"}}, {"model": "goods.productimage", "pk": 4, "fields": {"product": 10, "image": "goods_images/Cannabis_leaf.svg_NRhFXdh.png"}}]
