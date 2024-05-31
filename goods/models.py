@@ -47,6 +47,7 @@ class ProductImage(models.Model):
     image = models.ImageField(upload_to="goods_images", blank=True, null=True, verbose_name="Фото")
 
     class Meta:
+        db_table = "productimage"
         verbose_name = "Фото товара"
         verbose_name_plural = "Фото товара"
 
