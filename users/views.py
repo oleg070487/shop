@@ -1,5 +1,3 @@
-from email import message
-import re
 from django.contrib.auth.decorators import login_required
 from django.contrib import auth, messages
 from django.http import HttpResponseRedirect
@@ -19,6 +17,8 @@ def login(request):
             if user:
                 auth.login(request, user)
                 messages.success(request, f"{username}, Вы успешно вошли в аккаунт")
+                if request.POST.get('next', None):
+                    return HttpResponseRedirect(request.POST.get('next'))
                 return HttpResponseRedirect(reverse('main:index'))
     else:
         form = UserLoginForm() 
