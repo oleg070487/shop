@@ -3,6 +3,14 @@
 
 {% block css %}
     <link rel="stylesheet" href="{% static "deps/css/my_footer_css.css" %}">
+    {% comment %} <style>
+        .gradient-text {
+            background: linear-gradient(to right, #003366 0%, #ffffff 0%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 3px 2px 1px black, 0 0 1em black; /* Черная тень для окантовки */
+        }
+    </style> {% endcomment %}
 {% endblock %}
 
 {% block modal_cart %}
@@ -10,7 +18,7 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="mt-5 pt-5"><strong>{{ content }}</strong></h1>
+    <h1 class="mt-4 pt-2 gradient-text"><strong>{{ content }}</strong></h1>
 {% endblock %}
 
 {% block footer %}
